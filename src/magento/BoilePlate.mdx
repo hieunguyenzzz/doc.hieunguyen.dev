@@ -1,0 +1,19 @@
+---
+name: Boilerplate
+menu: Magento
+route: magento/boilerplate
+---
+
+# Magento Boilerplate
+## Get all child of configurable product
+
+```php
+foreach($collection as $_product) {
+        $logger->info("Here are Parent Product Name".$_product->getName());
+        $_children = $_product->getTypeInstance()->getUsedProducts($_product);
+        foreach ($_children as $child){
+            $logger->info("Here are your child Product Ids ".$child->getID());
+        }
+    }
+```
+

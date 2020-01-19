@@ -20,7 +20,7 @@
   },
   "git": {
     "scripts": {
-      "pre-push": "docz build && surge --project .docz/public/ --domain notes.hieunguyen.dev"
+      "pre-push": "yarn build && surge --project .docz/public/ --domain notes.hieunguyen.dev"
     }
   }
 }
