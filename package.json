@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "docz dev",
     "build": "docz build --dest public",
-    "serve": "docz serve"
+    "serve": "docz serve",
+    "test": "echo 'Run your tests here'"
   },
   "dependencies": {
     "docz": "latest",
