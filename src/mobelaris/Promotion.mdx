@@ -1,0 +1,38 @@
+---
+name: Cart Rule
+menu: Mobelaris
+route: mobelaris/promotion/cart-rule
+---
+
+# Cart rule
+
+## Use the same coupon on difference website
+
+### task url
+
+https://app.asana.com/0/1118999600107960/1156147740503841
+
+### implement
+
+1. Override **Magento\SalesRule\Model\ResourceModel** at **Mobelaris\Sales\Model\SalesRule\Coupon**
+
+```php
+namespace Mobelaris\Sales\Model\SalesRule;
+
+class Coupon extends \Magento\SalesRule\Model\ResourceModel\Coupon
+{
+    /**
+     * Constructor adds unique fields
+     *
+     * @return void
+     */
+    protected function _construct()
+    {
+        $this->_init('salesrule_coupon', 'coupon_id');
+        //$this->addUniqueField(['field' => 'code', 'title' => __('Coupon with the same code')]); // comment this out to allow multiple rule use the same coupon
+    }
+}
+```
+
+
+

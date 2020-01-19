@@ -1,0 +1,49 @@
+---
+name: Catalog Rule
+menu: Mobelaris
+route: mobelaris/promotion/catalog-rule
+---
+
+# Catalog rule
+
+there is an issue which it used parent promotion status to apply to child-product status for configuration products
+
+```php
+#vendor/magento/module-catalog-rule-configurable/Plugin/CatalogRule/Model/Rule/ConfigurableProductHandler.php
+
+/**
+     * @param \Magento\CatalogRule\Model\Rule $rule
+     * @param array $productIds
+     * @return array
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
+     */
+    public function afterGetMatchingProductIds(\Magento\CatalogRule\Model\Rule $rule, array $productIds)
+    {
+        $configurableProductIds = $this->configurableProductsProvider->getIds(array_keys($productIds));
+        foreach ($configurableProductIds as $productId) {
+            if (!isset($this->childrenProducts[$productId])) {
+                $this->childrenProducts[$productId] = $this->configurable->getChildrenIds($productId)[0];
+            }
+            $subProductIds = $this->childrenProducts[$productId];
+            $parentValidationResult = isset($productIds[$productId])
+                ? array_filter($productIds[$productId])
+                : [];
+            foreach ($subProductIds as $subProductId) {
+                $childValidationResult = isset($productIds[$subProductId])
+                    ? array_filter($productIds[$subProductId])
+                    : [];
+//                $productIds[$subProductId] = $parentValidationResult + $childValidationResult;
+                $productIds[$subProductId] = $childValidationResult;
+            }
+            unset($productIds[$productId]);
+        }
+        return $productIds;
+    }
+```
+
+it has to be fixed by comment out this line
+
+```php
+$productIds[$subProductId] = $parentValidationResult + $childValidationResult;
+```
+
