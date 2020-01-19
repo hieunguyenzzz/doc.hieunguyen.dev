@@ -13,5 +13,14 @@
     "prop-types": "^15.7.2",
     "react": "^16.11.0",
     "react-dom": "^16.11.0"
+  },
+  "devDependencies": {
+    "git-scripts": "^0.2.1",
+    "surge": "^0.21.3"
+  },
+  "git": {
+    "scripts": {
+      "pre-push": "surge --project ./docz/public/ --domain notes.hieunguyen.dev"
+    }
   }
 }
