@@ -3,9 +3,11 @@ before_script:
   - npm install -g gatsby surge docz
 node_js:
   - "10"
+env:
+  - SURGE_LOGIN: thethi.thichthat@gmail.com
+  - SURGE_TOKEN: d3749017add8716e931d25ea5ba83f14
 deploy:
-  provider: script
-  script: yarn build && yarn deploy
+  provider: surge
   skip_cleanup: true
   on:
     branch: master
