@@ -8,11 +8,21 @@ route: travis/gatsby
 
 ## Use Travis CI to deploy Gatsby to Surge
 
+### Config environment variable - travis-ci.org
+
+1. go to https://travis-ci.org/dashboard
+2. select the repository - go to settings
+3. add Environment Variables as bellow
+    - SURGE_LOGIN: email which use to login to surge.sh
+    - SURGE_TOKEN: result of cli command `surge token`
+
+### config travis of the project
+
 ##### `package.json`
 
 ```json
 "scripts": {
-  "deploy": "gatsby build --prefix-paths && gh-pages -d public -r https://$GH_TOKEN@github.com/lirantal/dockly.git"
+  "deploy": "surge .docz/public/ --domain notes.hieunguyen.dev"
 }
 ```
 
@@ -26,7 +36,7 @@ node_js:
   - "10"
 deploy:
   provider: script
-  script: cd docs/ && yarn install && yarn run deploy
+  script: yarn build && yarn deploy
   skip_cleanup: true
   on:
     branch: master
