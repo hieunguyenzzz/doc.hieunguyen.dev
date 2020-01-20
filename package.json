@@ -17,10 +17,5 @@
   "devDependencies": {
     "git-scripts": "^0.2.1",
     "surge": "^0.21.3"
-  },
-  "git": {
-    "scripts": {
-      "pre-push": "yarn build && surge --project .docz/public/ --domain notes.hieunguyen.dev"
-    }
   }
 }
