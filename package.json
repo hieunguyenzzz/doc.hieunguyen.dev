@@ -7,7 +7,7 @@
     "build": "docz build --dest public",
     "serve": "docz serve",
     "test": "echo 'Run your tests here'",
-    "deploy": "surge --project .docz/public/"
+    "deploy": "surge .docz/public/ --domain notes.hieunguyen.dev"
   },
   "dependencies": {
     "docz": "latest",
