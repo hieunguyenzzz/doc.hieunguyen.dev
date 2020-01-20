@@ -1,6 +1,6 @@
 language: node_js
 before_script:
-  - yarn install -g gatsby surge docz
+  - yarn global add gatsby surge docz
 node_js:
   - "10"
 env:
