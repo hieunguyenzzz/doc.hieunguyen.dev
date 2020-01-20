@@ -4,8 +4,8 @@ before_script:
 node_js:
   - "10"
 env:
-  - SURGE_LOGIN: thethi.thichthat@gmail.com
-  - SURGE_TOKEN: d3749017add8716e931d25ea5ba83f14
+  - SURGE_LOGIN="thethi.thichthat@gmail.com"
+  - SURGE_TOKEN="d3749017add8716e931d25ea5ba83f14"
 deploy:
   provider: surge
   skip_cleanup: true
