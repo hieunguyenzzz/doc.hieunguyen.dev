@@ -5,7 +5,7 @@ node_js:
   - "10"
 deploy:
   provider: script
-  script: yarn build && surge --project .docz/public/ --domain notes.hieunguyen.dev
+  script: yarn build && yarn deploy
   skip_cleanup: true
   on:
     branch: master
