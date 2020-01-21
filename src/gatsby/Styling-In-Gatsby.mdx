@@ -1,0 +1,48 @@
+---
+name: Styling In Gatsby
+menu: Gatsby
+route: gatsby/styling-in-gatsby
+---
+
+# Styling In Gatsby
+
+There are lot of ways to style a gatsby, here 2 ways which seem the most appropriate for almost project
+
+## Global Style
+
+This way works for all the styling which apply for all the pages on the site
+
+1. create the `gatsby-browser.js` on the root folder of the project
+2. import all the css file you want
+
+```js
+import "./src/styles/global.css"
+// or:
+// require('./src/styles/global.css')
+```
+
+## Component style
+
+say we have to style a component  `src/components/container.js`
+
+```js
+//src/components/container.js
+import React from "react"
+import containerStyles from "./container.module.css"
+export default ({ children }) => (
+  <div className={containerStyles.container}>{children}</div>
+)
+```
+
+the `import containerStyles from "./container.module.css"` is style just for this component, this css file should end up with `module.css` so gatsby will know it is css module
+
+```js
+// src/components/container.module.css
+.container {
+  margin: 3rem auto;
+  max-width: 600px;
+}
+```
+
+
+
