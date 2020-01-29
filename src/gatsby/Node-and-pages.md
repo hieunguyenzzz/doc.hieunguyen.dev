@@ -57,5 +57,5 @@ exports.createPages = async ({ graphql, actions }) => {
 ```
 
 The above code do
-1. add node field `slug` into node `MarkdownRemark.edges.node`
-2. make graphQL to find out all the slug available and create pages using that slug, using template at `./src/templates/blog-post.js`, and it passed 1 variable `slug` into that template
+-   add node field `slug` into node `MarkdownRemark.edges.node`
+-   make graphQL to find out all the slug available and create pages using that slug, using template at `./src/templates/blog-post.js`, and it passed 1 variable `slug` into that template
