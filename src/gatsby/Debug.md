@@ -9,7 +9,7 @@ route: gatsby/debug
 
 visit `http://localhost:8000/___graphql` and trigger query for this
 
-```
+```graphql
 {
   allSitePage {
     edges {

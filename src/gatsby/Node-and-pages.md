@@ -59,3 +59,62 @@ exports.createPages = async ({ graphql, actions }) => {
 The above code do
 -   add node field `slug` into node `MarkdownRemark.edges.node`
 -   make graphQL to find out all the slug available and create pages using that slug, using template at `./src/templates/blog-post.js`, and it passed 1 variable `slug` into that template
+
+## Pages
+
+### modify created pages
+
+to modifying created page, we use `onCreatePage` which being fired by `gatsby-node.js`. this method is being called when the page is successfully created
+
+the bellow example demonstrate of how to modify path of pages which been generated to something else
+
+```js
+// Replacing '/' would result in empty string which is invalid
+const replacePath = path => (path === `/` ? path : path.replace(/\/$/, ``))
+// Implement the Gatsby API “onCreatePage”. This is
+// called after every page is created.
+exports.onCreatePage = ({ page, actions }) => {
+  const { createPage, deletePage } = actions
+
+  const oldPage = Object.assign({}, page)
+  // Remove trailing slash unless page is /
+  page.path = replacePath(page.path)
+  if (page.path !== oldPage.path) {
+    // Replace new page with old page
+    deletePage(oldPage)
+    createPage(page)
+  }
+}
+```
+
+### Pass context data to created pages
+
+context data is similar to props, which can be append to created pages
+
+```js
+exports.onCreatePage = ({ page, actions }) => {
+  const { createPage, deletePage } = actions
+
+  deletePage(page)
+  // You can access the variable "house" in your page queries now
+  createPage({
+    ...page,
+    context: {
+      ...page.context,
+      house: `Gryffindor`,
+    },
+  })
+}
+```
+
+the above context stuff can be access like this
+
+```js
+import React from "react"
+
+const Page = ({ pageContext }) => {
+  return <div>{pageContext.house}</div>
+}
+
+export default Page
+```
