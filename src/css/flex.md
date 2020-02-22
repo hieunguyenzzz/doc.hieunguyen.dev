@@ -34,6 +34,16 @@ possible value:
 }
 ```
 
+> Notice that when the flex direction is a column, `justify-content` changes to the vertical and `align-items` to the horizontal.
+
+```css
+/*with this example these childs elements will end up showing as column, and being pushed to the bottom */
+#pond {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+```
 
 ##### `flex-wrap`
 
@@ -60,6 +70,13 @@ The `justify-content` property is used to align the flex items:
 
 The `align-items` property is used to align the flex items vertically.
 
+- flex-start
+- flex-end;
+- center;
+- baseline
+- stretch ( default) 
+
+
 ## Child 
 
 ##### `order`
@@ -68,4 +85,6 @@ The `align-items` property is used to align the flex items vertically.
 ##### `flex-basis`
 ##### `flex`
 ##### `align-self`
+
+this attribute is useful when you want to only align specific child item. This property accepts the same values as [align-items](#align-items)
 
