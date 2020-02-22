@@ -56,6 +56,8 @@ possible values:
 
 The `flex-flow` property is a shorthand property for setting both the `flex-direction` and `flex-wrap` properties.
 
+For example, you can use `flex-flow: row wrap` to set rows and wrap them.
+
 ##### `justify-content`
 
 The `justify-content` property is used to align the flex items:
@@ -75,6 +77,16 @@ The `align-items` property is used to align the flex items vertically.
 - center;
 - baseline
 - stretch ( default) 
+
+##### `align-content`
+align-content determines the spacing between lines
+
+- flex-start: Lines are packed at the top of the container.
+- flex-end: Lines are packed at the bottom of the container.
+- center: Lines are packed at the vertical center of the container.
+- space-between: Lines display with equal spacing between them.
+- space-around: Lines display with equal spacing around them.
+- stretch: Lines are stretched to fit the container.
 
 
 ## Child 
