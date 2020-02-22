@@ -22,6 +22,19 @@ possible value:
 -   row
 -   row-reverse
 
+> note that when you set the direction to a reversed row or column, start and end are also reversed. look at the example bellow
+
+
+```css
+/* with this example these child elements will end up showing at top-left of the container*/
+#pond {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+}
+```
+
+
 ##### `flex-wrap`
 
 possible values:
