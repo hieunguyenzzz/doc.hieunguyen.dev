@@ -17,3 +17,25 @@ foreach($collection as $_product) {
     }
 ```
 
+## Use resource model to query to database directly
+
+```php
+public function __construct(
+    \Magento\Backend\Block\Template\Context $context,
+    \Magento\Framework\App\Resource $resource,
+    array $data = []
+) {
+    $this->_resource = $resource;
+    parent::__construct($context, $data);
+}
+
+protected function getConnection()
+{
+    if (!$this->connection) {
+        $this->connection = $this->_resource->getConnection('core_write');
+    }
+
+    return $this->connection;
+}
+```
+
