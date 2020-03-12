@@ -15,25 +15,27 @@ module name: Wsoftpro_Vendor
 vendor is eav entity
 
 ## sample vendor
-mevlana id:87
-a-ora-pizza id:380
+`mevlana` id:87
+`a-ora-pizza` id:380
+
+
 
 ## sample vendor attribute
 attribute 
 
-vendor_shop_url id: 177
-vendor_shop_name id:  157
-menu_category id: 223 text
+`vendor_shop_url` id: 177
+`vendor_shop_name` id:  157
+`menu_category` id: 223 text
 
 ### product attribute 
-vendor 186 int
+`vendor` 186 int
 
 ## Frontend
 http://eten.m2loc/a-ora-pizza? 
 
 => this is category page 
-layout file is catalog_category_view
-category page is connected with vendor by vendor_id field on `catalog_category_entity`
+layout file is `catalog_category_view`
+category page is connected with vendor by `vendor_id` field on `catalog_category_entity`
 
 ## the import files 
 
