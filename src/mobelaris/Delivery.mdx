@@ -1,0 +1,35 @@
+---
+name: Delivery
+menu: mobelaris
+route: mobelaris/shipping
+---
+
+# All about shipping
+
+## shipping rate
+
+https://docs.google.com/spreadsheets/d/1M2v1TNZtNqRA4OFN640DoOL8XhY7HDhUj_Pb-AOWvnk/edit#gid=0
+
+## Implementation
+
+### Modules
+
+> app/code/Mobelaris/ShippingChanges
+
+apply shipping cost to the checkout
+
+> app/code/Mobelaris/ShippingCost
+
+apply shipping cost to the feed
+
+### php file which handle shipping rate applied
+
+> app/code/Mobelaris/ShippingChanges/Model/Rewrite/Shipping/Shipping.php`
+
+### free shipping apply
+
+#### configuration to turn on free shipping
+
+to turn on free shipping, its need to turn off the shipping method `Flat rate` and turn on the `Free shipping`
+
+
