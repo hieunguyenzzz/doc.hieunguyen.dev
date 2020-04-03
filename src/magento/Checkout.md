@@ -32,4 +32,4 @@ see `vendor/magento/module-checkout/Model/CompositeConfigProvider.php`
 
 ### add more information into quote item and sales item
 
-`https://magento.stackexchange.com/a/277601`
+<https://magento.stackexchange.com/a/277601>
