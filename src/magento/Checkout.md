@@ -19,11 +19,17 @@ some jobs done by this template
 
 - all the customer data is injected into js by `window.customerData`
 
-### Inject custom information into checkout
-
-see `vendor/magento/module-checkout/Model/CompositeConfigProvider.php`
-
 ## checkout total
 ### sort order for this totals is configured on admin panel
 
 > Stores->Configuration->SALES->Sales->General->Checkout Totals Sort Order
+
+## Customization on checkout
+
+### Inject custom information into checkout
+
+see `vendor/magento/module-checkout/Model/CompositeConfigProvider.php`
+
+### add more information into quote item and sales item
+
+`https://magento.stackexchange.com/a/277601`
