@@ -4,15 +4,15 @@ menu: Unix
 route: unix/varnish
 ---
 
-# Installation
-
+# Varnish 
+## Configuration
 https://varnish-cache.org/docs/trunk/installation/install_debian.html
 
-## List all UUIDs
+### List all UUIDs
 
-# Configuration
+## Configuration
 
-## change nginx port from 80 to 8080
+### change nginx port from 80 to 8080
 
 ```shell script
 sudo netstat -lntp | grep nginx
@@ -21,7 +21,7 @@ sudo netstat -lntp | grep nginx
 find all the host file of nginx and change the listen port
 
 
-## Make Varnish systemd Port 80
+### Make Varnish systemd Port 80
 
 The way systemd works we have to create a drop-in systemd file that overrides the ExecStart line. This ensures that the changes made directly to the systemd service are not overwritten when there is an upgrade.
 
@@ -52,4 +52,10 @@ reload the varnish
 service varnish restart
 ```
 
-## 
+## Flush varnish 
+
+i.e flush this page https://www.mobelaris.com/sv/
+
+```shell script
+varnishadm -T localhost:6082 -S /etc/varnish/secret ban "req.http.host == www.mobelaris.com && req.url == /sv/"
+```
