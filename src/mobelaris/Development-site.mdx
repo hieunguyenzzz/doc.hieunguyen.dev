@@ -9,10 +9,12 @@ route: mobelaris/development-site
 ## Script after deploying
 
 ```sql
-update core_config_data set value = 0 where `path` = 'dev/js/enable_js_bundling'
-update core_config_data set value = 0 where `path` = 'dev/js/merge_files'
-update core_config_data set value = 0 where `path` = 'dev/css/merge_css_files'
-update core_config_data set value = 'NOINDEX,NOFOLLOW' where `path` = 'design/search_engine_robots/default_robots'
+update core_config_data set value = 0 where `path` = 'dev/js/enable_js_bundling';
+update core_config_data set value = 0 where `path` = 'dev/js/merge_files';
+update core_config_data set value = 0 where `path` = 'dev/css/merge_css_files';
+update core_config_data set value = 'https://www.mobelaris.com/' where `path` = 'web/unsecure/base_url';
+update core_config_data set value = 'https://www.mobelaris.com/' where `path` = 'web/secure/base_url';
+update core_config_data set value = 'NOINDEX,NOFOLLOW' where `path` = 'design/search_engine_robots/default_robots';
 update core_config_data set value = 'User-agent: *
-                                     Disallow: /' where `path` = 'design/search_engine_robots/custom_instructions'
+                                     Disallow: /' where `path` = 'design/search_engine_robots/custom_instructions';
 ```
