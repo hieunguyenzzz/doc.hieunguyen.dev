@@ -26,3 +26,4 @@ route: magento/graphql-boilerplate
 }
 ```
 
+**wanna get all products ?** filter by category id 2
