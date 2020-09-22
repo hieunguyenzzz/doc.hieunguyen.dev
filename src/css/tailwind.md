@@ -64,10 +64,10 @@ postcss css/tailwind.css -o public/build/tailwind.css
 
 |breakpoint|in px|
 |---|---|
-|sm|1px|
-|md|1px|
-|lg|1px|
-|xl|1px|
+|sm|640px|
+|md|768px|
+|lg|1024px|
+|xl|1280px|
 
 #### responsive 
 
@@ -93,6 +93,11 @@ tracking-wider
 font-semibold
 uppercase
 ```
+#### `Container`
+
+> The .container class sets the max-width of an element to match the min-width of the current breakpoint. This is useful if you'd prefer to design for a fixed set of screen sizes instead of trying to accommodate a fully fluid viewport.
+
+
 
 
 
