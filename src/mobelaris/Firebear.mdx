@@ -1,0 +1,23 @@
+---
+name: Firebear problems
+menu: Mobelaris
+route: mobelaris/firebear-problem
+---
+
+# All about firebear
+
+## Showing all the options on 1st tier options
+
+```js
+// swatch-renderer.js
+
+_Rebuild: function () {
+    $this.find('[option-id]').each(function () {
+        if($this.hasClass("egg_chair_material") || $this.hasClass('yiju_options') || $this.hasClass('material')){
+            $element.removeAttr('disabled').removeClass('disabled');
+        }
+    }
+}
+```
+
+
