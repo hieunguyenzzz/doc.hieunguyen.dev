@@ -1,7 +1,6 @@
 ---
 name: Fundamenntal
 menu: Css
-route: css/fundamental
 ---
 
 ## Basic CSS need to know

@@ -1,7 +1,6 @@
 ---
 name: Paypal Setup
 menu: Magento
-route: magento/paypal
 ---
 
 # Configuration

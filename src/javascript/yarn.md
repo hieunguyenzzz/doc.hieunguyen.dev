@@ -1,7 +1,6 @@
 ---
 name: Yarn
 menu: Javascript
-route: javascript/yarn
 ---
 
 

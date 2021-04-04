@@ -1,7 +1,6 @@
 ---
 name: Hook
 menu: React
-route: react/hook
 ---
 
 # React

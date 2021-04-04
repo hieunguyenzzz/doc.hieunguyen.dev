@@ -1,7 +1,6 @@
 ---
 name: Gatsby Context
 menu: Gatsby
-route: gatsby/context
 ---
 
 # Context

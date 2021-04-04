@@ -1,7 +1,6 @@
 ---
 name: Nodes and Pages
 menu: Gatsby
-route: gatsby/node-and-pages
 ---
 
 # Node and Pages

@@ -1,7 +1,6 @@
 ---
 name: upgrading script
 menu: Mobelaris
-route: mobelaris/upgrading-script
 ---
 
 # Upgrading script

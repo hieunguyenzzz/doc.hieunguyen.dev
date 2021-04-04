@@ -1,7 +1,6 @@
 ---
 name: Flex
 menu: Css
-route: css/flex
 ---
 
 # Flex in CSS

@@ -1,7 +1,6 @@
 ---
 name: Category
 menu: Mobelaris
-route: mobelaris/category
 ---
 
 # Information

@@ -1,7 +1,6 @@
 ---
 name: Debug
 menu: Gatsby
-route: gatsby/debug
 ---
 
 # Debug with Gatsby

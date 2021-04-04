@@ -1,7 +1,6 @@
 ---
 name: love lamp
 menu: project
-route: project/lovelamp
 ---
 
 

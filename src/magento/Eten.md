@@ -1,7 +1,6 @@
 ---
 name: Eten
 menu: Magento
-route: magento/eten
 ---
 
 # Eten

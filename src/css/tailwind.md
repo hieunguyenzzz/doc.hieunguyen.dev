@@ -1,7 +1,6 @@
 ---
 name: Tailwindcss
 menu: Css
-route: css/tailwind
 ---
 
 # Tailwind css

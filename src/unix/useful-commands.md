@@ -1,7 +1,6 @@
 ---
 name: Useful Command
 menu: Unix
-route: unix/useful-command
 ---
 
 

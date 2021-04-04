@@ -1,7 +1,6 @@
 ---
 name: Checkout
 menu: Magento
-route: magento/checkout
 ---
 
 # All about checkout

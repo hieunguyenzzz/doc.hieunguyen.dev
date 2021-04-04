@@ -1,7 +1,6 @@
 ---
 name: Server-side rendering 
 menu: Gatsby
-route: gatsby/server-side-rendering
 ---
 
 # Information & API

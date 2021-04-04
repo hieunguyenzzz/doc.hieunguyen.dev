@@ -1,7 +1,6 @@
 ---
 name: Debugging
 menu: Magento
-route: magento/debugging
 ---
 
 # Debugging

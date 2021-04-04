@@ -1,7 +1,6 @@
 ---
 name: GraphQL
 menu: Gatsby
-route: gatsby/graphql
 ---
 
 # Graphql

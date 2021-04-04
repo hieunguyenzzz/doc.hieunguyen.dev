@@ -1,7 +1,6 @@
 ---
 name: Varnish
 menu: Unix
-route: unix/varnish
 ---
 
 # Varnish 

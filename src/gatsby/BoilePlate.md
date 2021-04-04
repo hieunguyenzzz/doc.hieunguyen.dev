@@ -1,7 +1,6 @@
 ---
 name: Gatsby Boilerplate
 menu: Gatsby
-route: gatsby/boilerplate
 ---
 
 # Gatsby Boilerplate

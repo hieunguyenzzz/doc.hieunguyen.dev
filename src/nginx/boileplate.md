@@ -1,7 +1,6 @@
 ---
 name: Boileplate
 menu: nginx
-route: nginx/boileplate
 ---
 
 # Nginx

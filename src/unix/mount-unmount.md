@@ -1,7 +1,6 @@
 ---
 name: Mount & unmount
 menu: Unix
-route: unix/mount-unmount
 ---
 
 # Mount && unmount

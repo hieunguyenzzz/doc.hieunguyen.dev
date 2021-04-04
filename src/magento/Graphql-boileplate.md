@@ -1,7 +1,6 @@
 ---
 name: GraphQL Boilerplate
 menu: Magento
-route: magento/graphql-boilerplate
 ---
 
 # GraphQL Boilerplate
