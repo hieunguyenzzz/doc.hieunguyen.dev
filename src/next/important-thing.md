@@ -1,0 +1,111 @@
+---
+name: Important thing
+menu: NextJS
+---
+
+# Important Thing
+
+
+### Client-Side Navigation
+
+1. The [`Link`](https://nextjs.org/docs/api-reference/next/link) component is client-site navigation. mean the page never reload
+2. in production build, nextjs detect `Link` component in browser viewport and prefetches the code for the linked page in the background
+
+> example of adding attribute to Link [`click here``](https://github.com/vercel/next-learn-starter/blob/master/snippets/link-classname-example.js)
+
+## Assets
+
+### `Public` folder
+
+1. The `public` directory is also useful for `robots.txt` . Google Site Verification, and any other static assets.
+
+### Metadata
+
+1. If you want to customize the <html> tag, for example to add the lang attribute, you can do so by creating a pages/_document.js
+
+## Pre-render stuff
+
+1. good for seo
+2. there are 2 kind of pre-render: 
+    * [static generation](#static-generation) html and stuff will be render at build time (recommended)
+    * server-side rendering: html and stuff will be render on each request
+    
+##### static generation
+
+- if the page needs data fetching from an external source i.e API at the build time. there are 4 things to remember.
+1. all the bellow function can handle server-side code directly. This includes reading from the filesystem or a database.
+2. [getStaticProps](https://nextjs.org/docs/basic-features/data-fetching#getstaticprops-static-generation): lets you pass fetched data to the page's `props`
+
+```jsx
+function Blog({ posts }) {
+  // Render posts...
+}
+
+// This function gets called at build time
+export async function getStaticProps() {
+  // Call an external API endpoint to get posts
+  const res = await fetch('https://.../posts')
+  const posts = await res.json()
+
+  // By returning { props: { posts } }, the Blog component
+  // will receive `posts` as a prop at build time
+  return {
+    props: {
+      posts,
+    },
+    
+    // Next.js will attempt to re-generate the page:
+    // - When a request comes in
+    // - At most once every second
+    revalidate: 1 //In seconds
+  }
+}
+
+export default Blog
+```
+3. [getStaticPaths](https://nextjs.org/docs/basic-features/data-fetching#getstaticpaths-static-generation): lets you specify which paths you want to pre-render.
+
+```jsx
+// This function gets called at build time
+export async function getStaticPaths() {
+  // Call an external API endpoint to get posts
+  const res = await fetch('https://.../posts')
+  const posts = await res.json()
+
+  // Get the paths we want to pre-render based on posts
+  const paths = posts.map((post) => ({
+    params: { id: post.id },
+  }))
+
+  // We'll pre-render only these paths at build time.
+  // { fallback: false } means other routes should 404.
+  return { paths, fallback: false }
+}
+```
+
+> read more: https://nextjs.org/docs/basic-features/pages#static-generation-with-data
+- if the page needs data fetching on the fly. use this [Fetching data on the client side](https://nextjs.org/docs/basic-features/data-fetching#fetching-data-on-the-client-side)
+
+4. [Incremental static generation](https://nextjs.org/docs/basic-features/data-fetching#incremental-static-regeneration)
+
+Incremental Static Regeneration allows you to update existing pages by re-rendering them in the background as traffic comes in.
+##### server-side rendering
+1. needs to implement [`getServerSideProps`](https://nextjs.org/docs/basic-features/data-fetching#getserversideprops-server-side-rendering) which will be called on each request
+
+```jsx
+function Page({ data }) {
+  // Render data...
+}
+
+// This gets called on every request
+export async function getServerSideProps() {
+  // Fetch data from external API
+  const res = await fetch(`https://.../data`)
+  const data = await res.json()
+
+  // Pass data to the page via props
+  return { props: { data } }
+}
+
+export default Page
+```
