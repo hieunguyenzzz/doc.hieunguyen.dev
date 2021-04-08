@@ -11,7 +11,7 @@ menu: NextJS
 1. The [`Link`](https://nextjs.org/docs/api-reference/next/link) component is client-site navigation. mean the page never reload
 2. in production build, nextjs detect `Link` component in browser viewport and prefetches the code for the linked page in the background
 
-> example of adding attribute to Link [`click here``](https://github.com/vercel/next-learn-starter/blob/master/snippets/link-classname-example.js)
+> example of adding attribute to Link [`click here`](https://github.com/vercel/next-learn-starter/blob/master/snippets/link-classname-example.js)
 
 ## Assets
 
@@ -26,10 +26,10 @@ menu: NextJS
 ## Pre-render stuff
 
 1. good for seo
-2. there are 2 kind of pre-render: 
+2. there are 2 kind of pre-render:
     * [static generation](#static-generation) html and stuff will be render at build time (recommended)
     * server-side rendering: html and stuff will be render on each request
-    
+
 ##### static generation
 
 - if the page needs data fetching from an external source i.e API at the build time. there are 4 things to remember.
@@ -53,7 +53,7 @@ export async function getStaticProps() {
     props: {
       posts,
     },
-    
+
     // Next.js will attempt to re-generate the page:
     // - When a request comes in
     // - At most once every second
