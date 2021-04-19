@@ -36,7 +36,7 @@ menu: NextJS
 1. all the bellow function can handle server-side code directly. This includes reading from the filesystem or a database.
 2. [getStaticProps](https://nextjs.org/docs/basic-features/data-fetching#getstaticprops-static-generation): lets you pass fetched data to the page's `props`
 
-```jsx
+```js
 function Blog({ posts }) {
   // Render posts...
 }
@@ -65,7 +65,7 @@ export default Blog
 ```
 3. [getStaticPaths](https://nextjs.org/docs/basic-features/data-fetching#getstaticpaths-static-generation): lets you specify which paths you want to pre-render.
 
-```jsx
+```js
 // This function gets called at build time
 export async function getStaticPaths() {
   // Call an external API endpoint to get posts
@@ -92,7 +92,7 @@ Incremental Static Regeneration allows you to update existing pages by re-render
 ##### server-side rendering
 1. needs to implement [`getServerSideProps`](https://nextjs.org/docs/basic-features/data-fetching#getserversideprops-server-side-rendering) which will be called on each request
 
-```jsx
+```js
 function Page({ data }) {
   // Render data...
 }
