@@ -12,3 +12,18 @@ https://shopify.dev/graphiql/storefront-graphiql
 ### multi-currencies
 
 https://shopify.dev/tutorials/support-multiple-currencies-with-storefront-api?shpxid=e492a3e7-BB84-419E-3D24-F18138242023
+
+
+### Graphql sample
+
+###### Customer login
+
+```graphql
+mutation customerlogin {
+  customerAccessTokenCreate(input: {email:"aa", password: "aaa"}) {
+    customerAccessToken {
+      accessToken
+    }
+  }
+}
+```
