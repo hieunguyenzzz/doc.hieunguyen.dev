@@ -5,16 +5,16 @@ menu: Shopify
 
 # Useful Resource
 
-### Frontapi graphql explorer
+### Frontapi graphql
 
-https://shopify.dev/graphiql/storefront-graphiql
+1. chrome extension: Alter
+2. api endpoint: https://merakicommerce.myshopify.com/api/2021-01/graphql.json
+3. header:
+```
+X-Shopify-Storefront-Access-Token: 1a13b2658e8d1392cdc8ab457cf09faf
+```
 
-### multi-currencies
-
-https://shopify.dev/tutorials/support-multiple-currencies-with-storefront-api?shpxid=e492a3e7-BB84-419E-3D24-F18138242023
-
-
-### Graphql sample
+### Graphql sample queries
 
 ###### Customer login
 
@@ -27,3 +27,7 @@ mutation customerlogin {
   }
 }
 ```
+
+### multi-currencies
+
+https://shopify.dev/tutorials/support-multiple-currencies-with-storefront-api?shpxid=e492a3e7-BB84-419E-3D24-F18138242023
